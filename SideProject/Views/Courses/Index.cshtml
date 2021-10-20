@@ -1,0 +1,10 @@
+﻿
+    <section>
+        <h1>Elenco dei corsi</h1>
+        <ul>
+            @for (int x = 1; x <= 3; x++)
+            {
+                <li><a href="/Courses/Detail/@x">Courses @x</a></li>
+            }
+        </ul>
+    </section>
