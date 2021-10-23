@@ -36,6 +36,7 @@ namespace SideProject
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
