@@ -20,11 +20,13 @@ namespace SideProject.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Home Page";
             return View();
         }
 
         public IActionResult Privacy()
         {
+            ViewData["Title"] = "Privacy";
             return View();
         }
 
