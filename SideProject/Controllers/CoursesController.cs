@@ -16,16 +16,16 @@ namespace SideProject.Controllers
         {
             this._courseService = courseService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             ViewData["Title"] = "Catalogo dei corsi";
-            List<CourseViewModel> courses=_courseService.GetCourses();
+            List<CourseViewModel> courses = await _courseService.GetCoursesAsync();
             return View(courses);
         }
 
-        public IActionResult Detail(int id)
+        public async Task<IActionResult> Detail(int id)
         {
-            CourseDetailViewModel course = _courseService.GetCourse(id);
+            CourseDetailViewModel course = await _courseService.GetCourseAsync(id);
             ViewData["Title"] = course.Title;
             return View(course);
         }

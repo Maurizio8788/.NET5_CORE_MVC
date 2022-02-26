@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using SideProject.Models.Services.Application;
+using SideProject.Models.Services.Infrastucture;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace SideProject
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<ICourseService, CourseService >();
+            services.AddTransient<ICourseService, AdoNetCourseService>();
+            services.AddTransient<IDatabaseAccessor, SqlLiteDatabaseAccessor>();
             
         }
 
